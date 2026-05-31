@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: trading-bot-btc
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: TELEGRAM_TOKEN
+        sync: false
+      - key: TELEGRAM_CHAT_ID
+        sync: false
+      - key: BINANCE_API_KEY
+        sync: false
+      - key: BINANCE_API_SECRET
+        sync: false
+      - key: SYMBOL
+        value: BTCUSDT
+      - key: TIMEFRAME
+        value: 4h
+      - key: PORT
+        value: 5000
